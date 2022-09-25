@@ -2,19 +2,26 @@
   "name": "basic-nodejs-template",
   "version": "0.0.1",
   "description": "A basic template for nodejs applications",
-  "main": "src/index.ts",
-  "repository": "git@github.com:mkny/basic-nodejs-template.git",
-  "author": "Marcony Neves <marconyneves@gmail.com>",
   "license": "MIT",
   "private": true,
+  "main": "dist/index.js",
+  "repository": "git@github.com:mkny/basic-nodejs-template.git",
+  "author": "Marcony Neves <desenvolvedor@me.com>",
+  "keywords": [
+    "basic",
+    "nodejs",
+    "node",
+    "basic"
+  ],
   "engines": {
     "node": ">=13",
-    "npm": ">=7"
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
   },
   "scripts": {
     "dev": "nodemon",
     "start": "node dist/index.js",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist/*",
     "build": "cross-env NODE_ENV=production babel src/ --out-dir dist/ --copy-files --no-copy-ignored --extensions .ts,.tsx,.js,.jsx",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx,.json src",
     "test": "jest --silent --coverage --logHeapUsage",
