@@ -2,19 +2,26 @@
   "name": "basic-nodejs-template",
   "version": "0.0.1",
   "description": "A basic template for nodejs applications",
-  "main": "src/index.ts",
-  "repository": "git@github.com:mkny/basic-nodejs-template.git",
-  "author": "Marcony Neves <marconyneves@gmail.com>",
   "license": "MIT",
   "private": true,
+  "main": "dist/index.js",
+  "repository": "git@github.com:mkny/basic-nodejs-template.git",
+  "author": "Marcony Neves <desenvolvedor@me.com>",
+  "keywords": [
+    "basic",
+    "nodejs",
+    "node",
+    "basic"
+  ],
   "engines": {
     "node": ">=13",
-    "npm": ">=7"
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
   },
   "scripts": {
     "dev": "nodemon",
     "start": "node dist/index.js",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist/*",
     "build": "cross-env NODE_ENV=production babel src/ --out-dir dist/ --copy-files --no-copy-ignored --extensions .ts,.tsx,.js,.jsx",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx,.json src",
     "test": "jest --silent --coverage --logHeapUsage",
@@ -26,6 +33,9 @@
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@commitlint/types": "^17.0.0",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
